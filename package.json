@@ -1,0 +1,37 @@
+{
+  "name": "rescript-unicode-zawgyi-converter",
+  "version": "0.0.1",
+  "description": "Converter for Myanmar (Burmese) unicode to zawgyi, and vice versa.",
+  "keywords": [
+    "Myanmar Unicode",
+    "Myanmar Zawgyi",
+    "Myanmar Unicode Zawgyi Converter",
+    "Burmese Unicode",
+    "Burmese Zawgyi",
+    "Burmese Unicode Zawgyi Converter"
+  ],
+  "author": "Nyi Nyi Than <nyinyithann@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nyinyithann/rescript-unicode-zawgyi-converter"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@glennsl/bs-jest": "^0.7.0",
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.7",
+    "rescript": "^9.1.4"
+  },
+  "scripts": {
+    "build": "rescript build -with-deps",
+    "clean": "rescript clean",
+    "test": "yarn build && jest --coverage",
+    "js": "nodemon lib/js/src/converter.js",
+    "iv": "npm --no-git-tag-version version patch",
+    "verdaccio-publish": "npm publish --registry http://localhost:4873",
+    "verdaccio-unpublish": "npm unpublish --force --registry http://localhost:4873/  unicode-zawgyi-converter",
+    "watch:res": "rescript build -w",
+    "watch:test": "jest --coverage --watchAll",
+    "watch:screen": "screen -c .screenrc"
+  }
+}
